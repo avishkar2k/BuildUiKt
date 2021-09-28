@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".RelativeLActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_height_fl"
+        android:layout_above="@id/fl_2"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/box_inset_layout_padding"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/tv_fl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="number"
+            android:gravity="center"
+            android:text="@string/_1"
+            tools:text="Avishkar"
+            android:background="@drawable/icondrawable"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_default_text_size" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_2"
+        android:layout_width="@dimen/_height_fl"
+        android:layout_height="@dimen/_height_fl"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/box_inset_layout_padding"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_fl2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/_2"
+            android:textColor="@color/black"
+            android:drawableStart="@drawable/ic_action_name"
+            android:textSize="@dimen/_default_text_size" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_height_fl"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/box_inset_layout_padding"
+        android:layout_toStartOf="@id/fl_2"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_fl3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/fl3"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_default_text_size" />
+    </FrameLayout>
+
+</RelativeLayout>

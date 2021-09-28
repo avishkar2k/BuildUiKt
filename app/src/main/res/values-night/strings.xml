@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_world">Hello World!</string>
+    <string name="greetings">Hola World</string>
+    <string name="title_activity_relative_l">RelativeLActivity</string>
+    <string name="fl3">3</string>
+</resources>
