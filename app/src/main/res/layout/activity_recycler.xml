@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:itemCount="20"
-    android:id="@+id/recyclerView"
-    tools:listitem="@layout/list_item1"
-    tools:context=".RecyclerActivity"/>
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl_button_back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fl_button_height" />
+
+    <Button
+        android:id="@+id/btn_all_items"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_button_height"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/button_margin"
+        android:elevation="1dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/all" />
+
+    <Button
+        android:id="@+id/btn_all_rcb"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_button_height"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/button_margin"
+        android:layout_toEndOf="@id/btn_all_items"
+        android:elevation="1dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/all_rcb" />
+
+    <Button
+        android:id="@+id/btn_all_mi"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_button_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/button_margin"
+        android:layout_toEndOf="@+id/btn_all_rcb"
+        android:elevation="1dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/all_mi" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fl_button_back"
+        tools:context=".RecyclerActivity"
+        tools:itemCount="20"
+        tools:listitem="@layout/list_item1" />
+
+</RelativeLayout>

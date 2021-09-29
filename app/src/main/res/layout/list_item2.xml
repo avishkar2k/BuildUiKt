@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:id="@+id/viewholder_background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:orientation="vertical"
     android:padding="@dimen/inner_frame_layout_padding"
-    tools:background="@color/lialac_200"
-    android:layout_margin="1dp">
+    tools:background="@color/lialac_200">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_profile_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:layout_gravity="center_horizontal"
         tools:src="@drawable/ab" />
 
     <TextView
@@ -20,8 +21,8 @@
         style="@style/appTextStyleTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@id/iv_profile_icon"
+        android:layout_gravity="center"
+        android:gravity="center"
         tools:text="@string/ab_de_villers" />
 
     <TextView
@@ -29,9 +30,8 @@
         style="@style/appTextStyleNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_player_name"
-        android:layout_alignStart="@id/tv_player_name"
-        android:layout_toEndOf="@id/iv_profile_icon"
+        android:layout_gravity="center"
+        android:gravity="center"
         tools:text="@string/batsman" />
 
     <TextView
@@ -39,9 +39,12 @@
         style="@style/appTextStyleNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_player_specialization"
-        android:layout_toEndOf="@id/iv_profile_icon"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:maxEms="8"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="@string/rcb" />
 
 
-</RelativeLayout>
+</LinearLayout>

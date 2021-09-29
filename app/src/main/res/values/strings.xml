@@ -20,4 +20,48 @@
     <string name="fl3">3</string>
     <string name="_2">2</string>
     <string name="_1">1</string>
+    <!--  Game  -->
+    <string name="batsman">Batsman</string>
+    <string name="wicketk">Wicket-keeper</string>
+    <string name="bowler">Bowler</string>
+    <string name="allround">All-rounder</string>
+    <!-- Team   -->
+    <string name="rcb">Royal Challengers Bangalore(RCB)</string>
+    <string name="mi">Mumbai Indians(MI)</string>
+    <!--  Players  -->
+    <string name="virat">Virat Kohli</string>
+    <string name="ab_de_villers">AB de Villers</string>
+    <string name="devd">Devdutt Padikkal</string>
+    <string name="tim">Tim David</string>
+    <string name="maxwell">Glenn Maxwell</string>
+    <string name="wanindu">Wanindu Hasaranga</string>
+    <string name="josh">Josh Philippe</string>
+    <string name="kyle">Kyle Jamieson</string>
+    <string name="harshal">Harshal Patel</string>
+    <string name="george">George Garton</string>
+    <string name="sundar">Washington Sundar</string>
+    <string name="scott">Scott Kuggeleijn</string>
+    <string name="siraj">Mohammed Siraj</string>
+    <string name="yuj">Yuzvendra Chahal</string>
+    <string name="zampa">Adam Zampa</string>
+    <string name="finn">Finn Allen</string>
+    <string name="rohit">Rohit Sharma</string>
+    <string name="hardik">Hardik Pandya</string>
+    <string name="arjun">Arjun Tendulkar</string>
+    <string name="boult">Trent Boult</string>
+    <string name="bumrah">Jaspreet Bumrah</string>
+    <string name="ishan">Ishan Kishan</string>
+    <string name="krunal">Krunal Pandya</string>
+    <string name="pollard">Kieron Pollard</string>
+    <string name="quinton">Quinton de Kock</string>
+    <string name="rahul">Rahul Chahar</string>
+    <string name="saurabh">Saurabh Tiwary</string>
+    <string name="adam">Adam Milne</string>
+    <string name="suryakumar">Suryakumar Yadav</string>
+
+    <!--    Action Buttons -->
+    <string name="all_mi">Mumbai Indians</string>
+    <string name="all_rcb">RCB</string>
+    <string name="all">All</string>
+
 </resources>
