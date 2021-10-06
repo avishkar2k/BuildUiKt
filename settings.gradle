@@ -1,2 +1,3 @@
+include ':coordinator'
 include ':app'
 rootProject.name = "BuildUiKt"

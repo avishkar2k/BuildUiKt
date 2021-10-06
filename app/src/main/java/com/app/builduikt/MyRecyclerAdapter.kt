@@ -51,7 +51,7 @@ class MyRecyclerAdapter(var arrayList: ArrayList<Cricketers>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.d(TAG, "onBindViewHolder: " + position)
+        Log.d(TAG, "onBindViewHolder: $position")
         //render ui
         val cricketer: Cricketers = arrayList[position]
         val backgroundColor = getBackgroundColor(cricketer)

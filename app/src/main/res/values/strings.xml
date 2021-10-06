@@ -63,5 +63,11 @@
     <string name="all_mi">Mumbai Indians</string>
     <string name="all_rcb">RCB</string>
     <string name="all">All</string>
+    <string name="any">any</string>
+    <string name="recycler_view">RecyclerView</string>
+    <string name="lflayout">Linear and Frame Layout</string>
+    <string name="clayout">Constraint Layout</string>
+    <string name="colayout">Coordinator Layout</string>
+    <string name="exp_rv">Expandable Recycler View</string>
 
 </resources>
