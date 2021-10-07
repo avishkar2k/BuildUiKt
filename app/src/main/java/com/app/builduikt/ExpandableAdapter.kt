@@ -23,13 +23,17 @@ class ExpandableAdapter(
 
     init {
         //create the hash-map for expanding and collapsing the views
-        for (team: String in teamList) {
+        // 1st time for mi
+        // 2nd time for rcb
+        for (team: String in teamList) { //size 2
             val arrayOfTeamPlayers: ArrayList<Cricketers> = ArrayList()
             for (player: Cricketers in playersList) {
                 if (resources.getString(player.playerTeam) == team) {
                     arrayOfTeamPlayers.add(player)
                 }
             }
+            //1st time mi with 13 players
+            //2nd time rcb with 16 players
             teamHashMap.set(team, arrayOfTeamPlayers)
         }
     }
@@ -43,6 +47,7 @@ class ExpandableAdapter(
         open fun addListeners() {
             //implementation of ui interaction listeners
         }
+
     }
 
     inner class ParentViewHolder(view: View) : ViewHolder(view) {
@@ -57,7 +62,7 @@ class ExpandableAdapter(
             when (expandableState) {
                 EXPANDED -> {
                     //fetch the index of previously selected/expanded item and number of players
-                    val indexOfTeamName: Int = getIndexOfCurrentTeamTitle()
+                    val indexOfTeamName: Int = getActualPosition(adapterPosition)
                     tvTeamTitle.text = teamList[indexOfTeamName]
                 }
                 else -> {
@@ -67,20 +72,11 @@ class ExpandableAdapter(
             updateStateTextDrawable()
         }
 
-        private fun getIndexOfCurrentTeamTitle(): Int {
-            val indexOfTeamExpanded = indexOfTeamExpanded()
-            val numberOfTeamPlayers = numberOfTeamPlayers()
-            return if (indexOfTeamExpanded >= adapterPosition) {
-                adapterPosition
-            } else adapterPosition - numberOfTeamPlayers
-        }
-
         override fun addListeners() {
             super.addListeners()
             val onClick: View.OnClickListener =
                 View.OnClickListener {
                     expandCollapseItems()
-                    updateStateTextDrawable()
                     notifyDataSetChanged()
                 }
             tvTeamTitle.setOnClickListener(onClick)
@@ -88,7 +84,7 @@ class ExpandableAdapter(
         }
 
         private fun updateStateTextDrawable() {
-            if (expandedTeam == teamList[getIndexOfCurrentTeamTitle()]) {
+            if (expandedTeam == teamList[getActualPosition(adapterPosition)]) {
                 when (expandableState) {
                     EXPANDED -> tvTeamTitle.setCompoundDrawablesRelativeWithIntrinsicBounds(
                         0,
@@ -160,10 +156,9 @@ class ExpandableAdapter(
 
         override fun bind() {
             //render ui
-            val indexOfTeamExpanded = indexOfTeamExpanded()
-            //val numberOfTeamPlayers = numberOfTeamPlayers()
             val cricketer: Cricketers =
-                teamHashMap[expandedTeam]?.get(adapterPosition - 1 - indexOfTeamExpanded) ?: return
+                teamHashMap[expandedTeam]?.get(getActualPosition(adapterPosition))
+                    ?: return
             val backgroundColor = getBackgroundColor(cricketer)
             profile.setImageResource(cricketer.profile)
             playerName.setText(cricketer.playerName)
@@ -244,9 +239,23 @@ class ExpandableAdapter(
         }
     }
 
-    private fun numberOfTeamPlayers() = teamHashMap[expandedTeam]?.size ?: 0
+    private fun numberOfTeamPlayers(): Int = teamHashMap[expandedTeam]?.size ?: 0
 
-    private fun indexOfTeamExpanded() = teamList.indexOf(expandedTeam)
+    private fun indexOfTeamExpanded(): Int = teamList.indexOf(expandedTeam)
+
+
+    private fun getActualPosition(adapterPosition: Int): Int = when (expandableState) {
+        EXPANDED -> {
+            when (adapterPosition) {
+                in indexOfTeamExpanded() + 1..(indexOfTeamExpanded() + numberOfTeamPlayers()) ->
+                    adapterPosition - (indexOfTeamExpanded() + 1)
+                in (indexOfTeamExpanded() + numberOfTeamPlayers())..itemCount ->
+                    adapterPosition - (indexOfTeamExpanded() + numberOfTeamPlayers())
+                else -> adapterPosition
+            }
+        }
+        else -> adapterPosition
+    }
 
     companion object {
         //view type

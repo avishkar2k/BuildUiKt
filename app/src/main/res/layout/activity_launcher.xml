@@ -40,84 +40,56 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_rv"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_height_fl"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                style="@style/cardViewProperties"
                 app:layout_constraintEnd_toStartOf="@id/g_part_vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/tv_rv"
-                    style="@style/appTextStyleTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    style="@style/appTextStyleTitleLauncherActivity"
                     android:text="@string/recycler_view" />
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_exp_rv"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_height_fl"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                style="@style/cardViewProperties"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/g_part_vertical"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/tv_exp_rv"
-                    style="@style/appTextStyleTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    style="@style/appTextStyleTitleLauncherActivity"
                     android:text="@string/exp_rv" />
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_coordinator"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_height_fl"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                style="@style/cardViewProperties"
                 app:layout_constraintEnd_toStartOf="@id/g_part_vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cv_rv">
 
                 <TextView
                     android:id="@+id/tv_coordinator"
-                    style="@style/appTextStyleTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    style="@style/appTextStyleTitleLauncherActivity"
                     android:text="@string/colayout" />
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cv_contraint"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_height_fl"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                android:id="@+id/cv_constraint"
+                style="@style/cardViewProperties"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/g_part_vertical"
                 app:layout_constraintTop_toBottomOf="@id/cv_exp_rv">
 
                 <TextView
                     android:id="@+id/tv_constraint"
-                    style="@style/appTextStyleTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    style="@style/appTextStyleTitleLauncherActivity"
                     android:text="@string/clayout" />
 
             </androidx.cardview.widget.CardView>

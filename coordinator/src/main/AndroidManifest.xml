@@ -12,17 +12,17 @@
         <activity
             android:name=".ScrollBasedActivity"
             android:label="@string/title_activity_scroll_based_activtiy"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".LayoutBasedActivity"
             android:label="@string/title_activity_layout_based_activtiy"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
     </application>
 

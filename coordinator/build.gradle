@@ -1,13 +1,12 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.example.coordinatorlayout_example"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

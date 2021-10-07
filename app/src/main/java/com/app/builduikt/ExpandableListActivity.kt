@@ -13,7 +13,7 @@ class ExpandableListActivity : AppCompatActivity() {
     }
 
     private fun setupExpandableRecyclerView() {
-        val rlExpandable: RecyclerView = findViewById(R.id.rl_expandable)
+        val recyclerViewExpandable: RecyclerView = findViewById(R.id.rl_expandable)
         val adapter = ExpandableAdapter(
             this.resources,
             arrayListOf(
@@ -22,8 +22,9 @@ class ExpandableListActivity : AppCompatActivity() {
             ),
             Players.getInstance().allPlayers()
         )
-        rlExpandable.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        rlExpandable.adapter = adapter
+        recyclerViewExpandable.layoutManager = LinearLayoutManager(this,
+            LinearLayoutManager.VERTICAL, false)
+        recyclerViewExpandable.adapter = adapter
         adapter.notifyDataSetChanged()
     }
 }

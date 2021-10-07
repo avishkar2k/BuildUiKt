@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.recyclerview.widget.RecyclerView
 
-class MyRecyclerAdapter(var arrayList: ArrayList<Cricketers>) :
+class MyRecyclerAdapter(var arrayList: ArrayList<Cricketers>, var click: OnSelectPlayer) :
     RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder>() {
 
     fun updateListItems(arrayList: ArrayList<Cricketers>) {
@@ -18,7 +18,7 @@ class MyRecyclerAdapter(var arrayList: ArrayList<Cricketers>) :
         notifyDataSetChanged()
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var playerName: TextView = view.findViewById(R.id.tv_player_name)
         var playerSpecialization: TextView =
             view.findViewById(R.id.tv_player_specialization)
@@ -32,6 +32,11 @@ class MyRecyclerAdapter(var arrayList: ArrayList<Cricketers>) :
             playerTeam.text = ""
             profile.setImageResource(0)
             background.setBackgroundResource(android.R.color.darker_gray)
+
+            //adding listener for the click
+            profile.setOnClickListener({
+                click.onPlayerSelected(adapterPosition, arrayList.get(adapterPosition))
+            })
         }
     }
 
@@ -48,6 +53,18 @@ class MyRecyclerAdapter(var arrayList: ArrayList<Cricketers>) :
         /*return ViewHolder(
                 LayoutInflater.from(parent.context).inflate(R.layout.list_item1, parent, false)
             )*/
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int, payloads: MutableList<Any>) {
+        super.onBindViewHolder(holder, position, payloads)
+        if (payloads.size == 0) return
+        val player: Cricketers = payloads[0] as Cricketers
+        Log.d(
+            TAG,
+            "onBindViewHolder: Item Change Notified " + holder.itemView.context.resources.getString(
+                player.playerName
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
