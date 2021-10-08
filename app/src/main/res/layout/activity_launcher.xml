@@ -94,6 +94,20 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_view_pager"
+                style="@style/cardViewProperties"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_coordinator">
+
+                <TextView
+                    android:id="@+id/tv_vp"
+                    style="@style/appTextStyleTitleLauncherActivity"
+                    android:text="@string/vp" />
+
+            </androidx.cardview.widget.CardView>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

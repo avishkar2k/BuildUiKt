@@ -69,5 +69,11 @@
     <string name="clayout">Constraint Layout</string>
     <string name="colayout">Coordinator Layout</string>
     <string name="exp_rv">Expandable Recycler View</string>
+    <string name="vp">ViewPager</string>
+    <string name="title_activity_view_pager">ViewPagerActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

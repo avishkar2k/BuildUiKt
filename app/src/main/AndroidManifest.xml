@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".ViewPagerActivity"
+            android:label="@string/title_activity_view_pager"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".LauncherActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityConstraintLayout"/>
+        <activity android:name=".ActivityConstraintLayout" />
         <activity android:name=".ExpandableListActivity" />
         <activity android:name=".RecyclerActivity" />
         <activity android:name=".RelativeLActivity" />

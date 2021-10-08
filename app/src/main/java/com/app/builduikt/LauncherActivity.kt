@@ -43,6 +43,14 @@ class LauncherActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_constraint).setOnClickListener(onClickCL)
 
 
+        //Constraint Layout
+        val onClickVp: View.OnClickListener = View.OnClickListener {
+            startNavigation(VIEWPAGER)
+        }
+        findViewById<CardView>(R.id.cv_view_pager).setOnClickListener(onClickVp)
+        findViewById<TextView>(R.id.tv_vp).setOnClickListener(onClickVp)
+
+
 
     }
 
@@ -52,6 +60,7 @@ class LauncherActivity : AppCompatActivity() {
             EXPANDABLE -> startActivity(Intent(this, ExpandableListActivity::class.java))
             COORDINTOR -> startActivity(Intent(this, com.example.coordinatorlayout_example.MainActivity::class.java))
             CONSTRAINT -> startActivity(Intent(this, ActivityConstraintLayout::class.java))
+            VIEWPAGER -> startActivity(Intent(this, ViewPagerActivity::class.java))
             else -> Toast.makeText(this, "No Where To Go...!", Toast.LENGTH_LONG).show()
         }
     }
@@ -62,6 +71,7 @@ class LauncherActivity : AppCompatActivity() {
         const val LFLAYOUT= 2
         const val CONSTRAINT = 3
         const val COORDINTOR = 4
+        const val VIEWPAGER = 5
     }
 
 
